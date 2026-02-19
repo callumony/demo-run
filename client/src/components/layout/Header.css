@@ -1,0 +1,331 @@
+.ide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  padding: 0 16px;
+  background: linear-gradient(180deg, rgba(19, 22, 29, 0.9) 0%, rgba(13, 15, 20, 0.9) 100%);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px 12px 0 0;
+  -webkit-app-region: drag;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  -webkit-app-region: no-drag;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.logo-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.header-logo-img {
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.menu-bar {
+  display: flex;
+  gap: 5px;
+}
+
+.menu-item-container {
+  position: relative;
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #94a3b8;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.menu-button:hover,
+.menu-button.active {
+  background: rgba(99, 102, 241, 0.15);
+  color: #e2e8f0;
+}
+
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #1a1e28;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(99, 102, 241, 0.15);
+  padding: 6px;
+  z-index: 100;
+  animation: dropdown-appear 0.15s ease-out;
+}
+
+@keyframes dropdown-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.menu-dropdown-item:hover {
+  background: rgba(99, 102, 241, 0.25);
+}
+
+.menu-dropdown-item svg {
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.menu-dropdown-item span:first-of-type {
+  flex: 1;
+}
+
+.menu-shortcut {
+  color: #64748b;
+  font-size: 11px;
+  font-family: monospace;
+}
+
+.menu-divider {
+  height: 1px;
+  background: rgba(99, 102, 241, 0.25);
+  margin: 6px 8px;
+}
+
+/* Train button special styling */
+.menu-button.train-button {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(67, 56, 202, 0.2) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  color: #a78bfa;
+  gap: 6px;
+}
+
+.menu-button.train-button:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.35) 0%, rgba(67, 56, 202, 0.35) 100%);
+  border-color: rgba(99, 102, 241, 0.6);
+  color: #c4b5fd;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  -webkit-app-region: no-drag;
+}
+
+.header-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.header-action-btn:hover {
+  background: rgba(99, 102, 241, 0.2);
+  color: #e2e8f0;
+}
+
+/* Light theme overrides */
+.light-theme .ide-header {
+  background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+  border-bottom-color: #e5e7eb;
+}
+
+.light-theme .logo-text {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light-theme .menu-button {
+  color: #6b7280;
+}
+
+.light-theme .menu-button:hover,
+.light-theme .menu-button.active {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.light-theme .menu-dropdown {
+  background: #ffffff;
+  border-color: #e5e7eb;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.light-theme .menu-dropdown-item {
+  color: #1f2937;
+}
+
+.light-theme .menu-dropdown-item:hover {
+  background: #f3f4f6;
+}
+
+.light-theme .menu-dropdown-item svg {
+  color: #6b7280;
+}
+
+.light-theme .menu-shortcut {
+  color: #9ca3af;
+}
+
+.light-theme .menu-divider {
+  background: #e5e7eb;
+}
+
+.light-theme .header-action-btn {
+  color: #6b7280;
+}
+
+.light-theme .header-action-btn:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.light-theme .menu-button.train-button {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #6366f1;
+}
+
+.light-theme .menu-button.train-button:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+  border-color: rgba(99, 102, 241, 0.5);
+  color: #4f46e5;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   BREAK BADGE
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.break-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #f59e0b;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  animation: break-badge-pulse 2s ease-in-out infinite;
+  cursor: default;
+}
+
+@keyframes break-badge-pulse {
+  0%, 100% { border-color: rgba(245, 158, 11, 0.3); }
+  50% { border-color: rgba(245, 158, 11, 0.6); box-shadow: 0 0 8px rgba(245, 158, 11, 0.15); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   DB STATUS + RECONNECT ICONS
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.header-status-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 8px;
+}
+
+.db-status-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.db-status-dot.online {
+  color: #22c55e;
+}
+
+.db-status-dot.offline {
+  color: #ef4444;
+}
+
+.reconnect-btn {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.reconnect-btn:hover {
+  color: #f59e0b !important;
+}
+
+/* Light theme */
+.light-theme .break-badge {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.25);
+}

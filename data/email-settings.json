@@ -1,0 +1,8 @@
+{
+  "connected": false,
+  "gmailEmail": null,
+  "gmailAccessToken": null,
+  "gmailRefreshToken": null,
+  "gmailTokenExpiresAt": null,
+  "authExpiresAt": null
+}

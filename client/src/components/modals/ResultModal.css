@@ -1,0 +1,323 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 15, 20, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.result-modal {
+  background: var(--bg-secondary, #13161d);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  animation: modalSlideIn 0.2s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.result-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.25);
+  background: var(--bg-tertiary, #1a1d27);
+}
+
+.result-modal-header h3 {
+  flex: 1;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary, #e2e8f0);
+}
+
+.result-icon {
+  flex-shrink: 0;
+}
+
+.result-icon.success {
+  color: #22c55e;
+}
+
+.result-icon.error {
+  color: #ef4444;
+}
+
+.result-icon.warning {
+  color: #a78bfa;
+}
+
+.result-icon.info {
+  color: #7a9bb8;
+}
+
+.result-icon.loading {
+  color: #a78bfa;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted, #64748b);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+
+.modal-close:hover {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--text-primary, #e2e8f0);
+}
+
+.result-modal-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  color: var(--text-secondary, #94a3b8);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.result-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.result-modal-content::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.35);
+  border-radius: 3px;
+}
+
+/* Markdown prose styles */
+.result-modal-content .prose {
+  max-width: none;
+}
+
+.result-modal-content .prose h1,
+.result-modal-content .prose h2,
+.result-modal-content .prose h3,
+.result-modal-content .prose h4 {
+  color: var(--text-primary, #e2e8f0);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.result-modal-content .prose h1:first-child,
+.result-modal-content .prose h2:first-child,
+.result-modal-content .prose h3:first-child {
+  margin-top: 0;
+}
+
+.result-modal-content .prose p {
+  margin: 0.75em 0;
+}
+
+.result-modal-content .prose ul,
+.result-modal-content .prose ol {
+  margin: 0.75em 0;
+  padding-left: 1.5em;
+}
+
+.result-modal-content .prose li {
+  margin: 0.25em 0;
+}
+
+.result-modal-content .prose code {
+  background: rgba(99, 102, 241, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.9em;
+  color: #a78bfa;
+}
+
+.result-modal-content .prose pre {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1em 0;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.result-modal-content .prose pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.result-modal-content .prose strong {
+  color: var(--text-primary, #e2e8f0);
+  font-weight: 600;
+}
+
+.result-modal-content .prose a {
+  color: #a78bfa;
+  text-decoration: none;
+}
+
+.result-modal-content .prose a:hover {
+  text-decoration: underline;
+}
+
+.result-modal-content .prose blockquote {
+  border-left: 3px solid var(--brand-primary, #6366f1);
+  margin: 1em 0;
+  padding-left: 1em;
+  color: var(--text-muted, #64748b);
+}
+
+.result-modal-content .prose hr {
+  border: none;
+  border-top: 1px solid rgba(99, 102, 241, 0.2);
+  margin: 1.5em 0;
+}
+
+.result-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 20px;
+  border-top: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.btn-secondary {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--text-primary, #e2e8f0);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-secondary:hover {
+  background: rgba(99, 102, 241, 0.25);
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* Modal type-specific accents */
+.result-modal.success {
+  border-top: 3px solid #22c55e;
+}
+
+.result-modal.error {
+  border-top: 3px solid #ef4444;
+}
+
+.result-modal.warning {
+  border-top: 3px solid #a78bfa;
+}
+
+.result-modal.info {
+  border-top: 3px solid #7a9bb8;
+}
+
+.result-modal.loading {
+  border-top: 3px solid #a78bfa;
+}
+
+/* Loading state - prevent closing */
+.result-modal.loading .result-modal-footer {
+  display: none;
+}
+
+/* Light theme overrides */
+.light-theme .result-modal {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .result-modal-header {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .result-modal-header h3 {
+  color: #212529;
+}
+
+.light-theme .modal-close {
+  color: #6c757d;
+}
+
+.light-theme .modal-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #212529;
+}
+
+.light-theme .result-modal-content {
+  color: #495057;
+}
+
+.light-theme .result-modal-content .prose h1,
+.light-theme .result-modal-content .prose h2,
+.light-theme .result-modal-content .prose h3,
+.light-theme .result-modal-content .prose h4 {
+  color: #212529;
+}
+
+.light-theme .result-modal-content .prose code {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.light-theme .result-modal-content .prose pre {
+  background: #f8f9fa;
+}
+
+.light-theme .result-modal-content .prose strong {
+  color: #212529;
+}
+
+.light-theme .result-modal-footer {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .btn-secondary {
+  background: rgba(0, 0, 0, 0.05);
+  color: #212529;
+}
+
+.light-theme .btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.1);
+}

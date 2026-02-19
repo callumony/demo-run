@@ -1,0 +1,380 @@
+.server-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0d0d14;
+}
+
+.server-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.server-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-icon {
+  flex-shrink: 0;
+}
+
+.status-icon.online {
+  color: #4ade80;
+}
+
+.status-icon.offline {
+  color: #f87171;
+}
+
+.status-icon.checking {
+  color: #fbbf24;
+}
+
+.status-icon.unknown {
+  color: #6b7280;
+}
+
+.status-icon.reconnecting {
+  color: #f59e0b;
+}
+
+.status-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.server-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.server-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.server-action-btn:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #a5b4fc;
+}
+
+.server-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.server-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.server-section {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.server-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.server-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.setting-row label {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.setting-value {
+  font-size: 13px;
+  color: #e5e7eb;
+  font-family: 'Fira Code', monospace;
+}
+
+.setting-value.url {
+  color: #60a5fa;
+}
+
+.port-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-edit:hover {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.3);
+  color: #a5b4fc;
+}
+
+.port-edit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.port-edit input {
+  width: 80px;
+  padding: 6px 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 4px;
+  color: #e5e7eb;
+  font-size: 13px;
+  font-family: 'Fira Code', monospace;
+}
+
+.port-edit input:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.btn-small {
+  padding: 4px 10px;
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 4px;
+  color: #a5b4fc;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-small:hover {
+  background: rgba(99, 102, 241, 0.3);
+}
+
+.btn-small.cancel {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+}
+
+.btn-small.cancel:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.server-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.server-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #9ca3af;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.server-btn:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #a5b4fc;
+}
+
+.server-btn.connected {
+  background: rgba(74, 222, 128, 0.1);
+  border-color: rgba(74, 222, 128, 0.3);
+  color: #4ade80;
+}
+
+.server-btn.connected:hover {
+  background: rgba(74, 222, 128, 0.2);
+}
+
+.server-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Logs Section */
+.server-section.logs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+}
+
+.server-logs {
+  flex: 1;
+  max-height: 200px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.log-empty {
+  padding: 20px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.log-entry {
+  display: flex;
+  gap: 8px;
+  padding: 6px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.log-entry:last-child {
+  margin-bottom: 0;
+}
+
+.log-entry.info {
+  color: #9ca3af;
+}
+
+.log-entry.success {
+  background: rgba(74, 222, 128, 0.1);
+  color: #4ade80;
+}
+
+.log-entry.error {
+  background: rgba(248, 113, 113, 0.1);
+  color: #f87171;
+}
+
+.log-entry.warning {
+  background: rgba(251, 191, 36, 0.1);
+  color: #fbbf24;
+}
+
+.log-time {
+  color: #6b7280;
+  flex-shrink: 0;
+  font-family: 'Fira Code', monospace;
+}
+
+.log-message {
+  flex: 1;
+}
+
+.last-checked {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 11px;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* Scrollbar */
+.server-logs::-webkit-scrollbar {
+  width: 6px;
+}
+
+.server-logs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.server-logs::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.server-logs::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Light theme */
+.light-theme .server-panel {
+  background: #f9fafb;
+}
+
+.light-theme .server-header {
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
+.light-theme .status-text {
+  color: #1f2937;
+}
+
+.light-theme .setting-row label {
+  color: #6b7280;
+}
+
+.light-theme .setting-value {
+  color: #1f2937;
+}
+
+.light-theme .server-logs {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.light-theme .port-edit input {
+  background: #ffffff;
+  border-color: #d1d5db;
+  color: #1f2937;
+}

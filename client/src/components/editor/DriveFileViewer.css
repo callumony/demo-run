@@ -1,0 +1,480 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   DRIVE FILE VIEWER STYLES
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.drive-file-viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: #13161d;
+  color: #e2e8f0;
+  overflow: hidden;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+
+.drive-viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #0d0f14;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 8px;
+  min-height: 40px;
+  flex-shrink: 0;
+}
+
+.drive-viewer-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.drive-viewer-icon {
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.drive-viewer-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #e2e8f0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── File Type Badge ────────────────────────────────────────────────────── */
+
+.drive-viewer-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badge-doc { background: rgba(66, 133, 244, 0.2); color: #4285f4; }
+.badge-sheet { background: rgba(52, 168, 83, 0.2); color: #34a853; }
+.badge-pdf { background: rgba(234, 67, 53, 0.2); color: #ea4335; }
+.badge-docx { background: rgba(66, 133, 244, 0.15); color: #6ea8fe; }
+.badge-xlsx { background: rgba(52, 168, 83, 0.15); color: #6ece82; }
+.badge-csv { background: rgba(52, 168, 83, 0.1); color: #86d89a; }
+.badge-text { background: rgba(148, 163, 184, 0.15); color: #94a3b8; }
+.badge-code { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
+.badge-image { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+.badge-slides { background: rgba(251, 188, 4, 0.2); color: #fbbc04; }
+.badge-file { background: rgba(148, 163, 184, 0.1); color: #64748b; }
+
+/* ─── Actions ────────────────────────────────────────────────────────────── */
+
+.drive-viewer-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.drive-viewer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.drive-viewer-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.drive-viewer-btn.copied {
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+/* ─── Learn Button ───────────────────────────────────────────────────────── */
+
+.drive-learn-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.drive-learn-btn:hover:not(:disabled) {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: rgba(245, 158, 11, 0.5);
+  color: #fbbf24;
+}
+
+.drive-learn-btn:disabled {
+  cursor: default;
+}
+
+.drive-learn-btn.loading {
+  color: #94a3b8;
+  border-color: rgba(148, 163, 184, 0.2);
+  background: rgba(148, 163, 184, 0.05);
+}
+
+.drive-learn-btn.success {
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.3);
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.drive-learn-btn.error {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.drive-learn-btn .spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Description ────────────────────────────────────────────────────────── */
+
+.drive-viewer-description {
+  padding: 4px 12px;
+  font-size: 11px;
+  color: #64748b;
+  background: rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  flex-shrink: 0;
+}
+
+.drive-viewer-learn-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 11px;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.15);
+  flex-shrink: 0;
+}
+
+/* ─── Content Area ───────────────────────────────────────────────────────── */
+
+.drive-viewer-content {
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.drive-viewer-empty {
+  color: #64748b;
+  font-style: italic;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* ─── Rich Document View (iframe-based HTML rendering) ───────────────────── */
+
+.drive-doc-rich-view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+}
+
+.drive-doc-iframe {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border: none;
+  background: #13161d;
+}
+
+/* ─── Plain Text Document View (fallback) ────────────────────────────────── */
+
+.drive-doc-plain-view {
+  width: 100%;
+  padding: 24px 32px;
+  line-height: 1.7;
+  font-size: 14px;
+  overflow: auto;
+  flex: 1;
+}
+
+.drive-doc-plain-view p {
+  margin: 0 0 4px 0;
+}
+
+.drive-doc-plain-view p.empty-line {
+  height: 14px;
+}
+
+/* ─── Document View (legacy plain text) ──────────────────────────────────── */
+
+.drive-doc-view {
+  width: 100%;
+  padding: 24px 32px;
+  line-height: 1.7;
+  font-size: 14px;
+  overflow: auto;
+  flex: 1;
+}
+
+.drive-doc-view p {
+  margin: 0 0 4px 0;
+}
+
+.drive-doc-view p.empty-line {
+  height: 14px;
+}
+
+/* ─── Spreadsheet View ───────────────────────────────────────────────────── */
+
+.drive-sheet-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding: 16px;
+}
+
+.drive-sheet-tabs {
+  display: flex;
+  gap: 2px;
+  padding: 0 0 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.drive-sheet-tab {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.drive-sheet-tab:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+}
+
+.drive-sheet-tab.active {
+  background: rgba(52, 168, 83, 0.15);
+  color: #34a853;
+  border-color: rgba(52, 168, 83, 0.3);
+}
+
+.drive-sheet-table-wrap {
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.drive-sheet-table {
+  border-collapse: collapse;
+  font-size: 12px;
+  min-width: 100%;
+}
+
+.drive-sheet-table th,
+.drive-sheet-table td {
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: left;
+  white-space: nowrap;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.drive-sheet-table th {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.drive-sheet-table td {
+  color: #cbd5e1;
+}
+
+.drive-sheet-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.drive-sheet-table .row-num {
+  color: #475569;
+  font-size: 10px;
+  text-align: right;
+  padding-right: 8px;
+  width: 30px;
+  min-width: 30px;
+  background: rgba(0, 0, 0, 0.1);
+  user-select: none;
+}
+
+/* ─── Code View ──────────────────────────────────────────────────────────── */
+
+.drive-code-view {
+  overflow: auto;
+  flex: 1;
+  padding: 16px;
+}
+
+.drive-code-view pre {
+  margin: 0;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.drive-code-view .code-line {
+  display: flex;
+}
+
+.drive-code-view .line-num {
+  color: #475569;
+  min-width: 40px;
+  text-align: right;
+  padding-right: 12px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.drive-code-view .line-content {
+  white-space: pre;
+}
+
+/* ─── Processed File View ────────────────────────────────────────────────── */
+
+.drive-processed-view {
+  width: 100%;
+  padding: 24px 32px;
+  line-height: 1.6;
+  font-size: 13px;
+  overflow: auto;
+  flex: 1;
+}
+
+.drive-processed-view p {
+  margin: 0 0 2px 0;
+}
+
+.drive-processed-view p.empty-line {
+  height: 10px;
+}
+
+.drive-processed-view .processed-header {
+  color: #f59e0b;
+  font-weight: 600;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* ─── Unsupported View ───────────────────────────────────────────────────── */
+
+.drive-viewer-unsupported {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 60px 20px;
+  color: #64748b;
+  text-align: center;
+}
+
+.drive-viewer-unsupported p {
+  font-size: 14px;
+}
+
+.drive-open-external {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  transition: all 0.15s ease;
+}
+
+.drive-open-external:hover {
+  background: rgba(99, 102, 241, 0.25);
+  color: #a5b4fc;
+}
+
+/* ─── LeftSidebar Drive File Overrides ───────────────────────────────────── */
+
+.gdrive-file-item.clickable {
+  cursor: pointer;
+}
+
+.gdrive-file-item.clickable:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.gdrive-file-item.opening {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.gdrive-file-external-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  padding: 2px;
+  border-radius: 3px;
+  transition: color 0.15s ease;
+}
+
+.gdrive-file-external-link:hover {
+  color: #818cf8;
+}

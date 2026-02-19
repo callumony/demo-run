@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'ChineseRocksRg-Regular';
+    src: url('dehinted-ChineseRocksRg-Regular.woff2') format('woff2'),
+        url('dehinted-ChineseRocksRg-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

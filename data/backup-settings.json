@@ -1,0 +1,13 @@
+{
+  "enabled": false,
+  "schedule": "daily",
+  "time": "03:00",
+  "cloudProvider": null,
+  "notifyOnBackup": false,
+  "notifyEmail": "",
+  "githubUsername": null,
+  "githubRepo": null,
+  "dropboxRefreshToken": null,
+  "dropboxUsername": null,
+  "dropboxEmail": null
+}

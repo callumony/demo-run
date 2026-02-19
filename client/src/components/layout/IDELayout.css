@@ -1,0 +1,44 @@
+.ide-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: transparent;
+  color: #e2e8f0;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+/* Light theme */
+.ide-layout.light-theme {
+  background: #f5f5f5;
+  color: #1e1e1e;
+}
+
+.ide-content {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Panel styles */
+[data-panel] {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Separator hover state */
+[data-separator]:hover {
+  background: #6366f1 !important;
+}
+
+/* Light theme separator hover */
+.ide-layout.light-theme [data-separator]:hover {
+  background: #6366f1 !important;
+}

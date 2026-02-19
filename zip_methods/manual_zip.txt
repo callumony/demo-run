@@ -1,0 +1,5 @@
+To create a zip file manually in Windows:
+1. Open File Explorer and navigate to the folder containing the files or folders you want to zip.
+2. Select the files or folders.
+3. Right-click on the selection, choose 'Send to', and then select 'Compressed (zipped) folder'.
+4. A new zip file will be created in the same location.
